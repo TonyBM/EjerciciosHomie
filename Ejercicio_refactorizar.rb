@@ -1,7 +1,7 @@
 def get_customer_state(session_id = nil)
-  return { state: 'chat_disabled' } if !Setting.get('chat')
-  chat_session = nil
-  chat_session = Chat::Session.find_by(session_id: session_id, state: %w[waiting running]) if session_id
+  return { state: 'chat_disabled' } unless Setting.get('chat')
+
+  chat_session = session_id ? (Chat::Session.find_by(session_id: session_id, state: %w[waiting running])) : nil
 
   return reconnect_chat_session if chat_session
   return { state: 'offline' } if active_agents?
