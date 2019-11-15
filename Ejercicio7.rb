@@ -3,7 +3,7 @@ def multiplicacionElementos(numbers)
   numbers.each_index do
     |index|
     listWithoutNumber = numbers.reject{|element| element == numbers[index]}
-    number_factor = listWithoutNumber.inject(1){|product,num| product*num}
+    number_factor = listWithoutNumber.inject(:*)
     result << number_factor
 
   end
