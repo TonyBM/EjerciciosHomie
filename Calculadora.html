@@ -12,33 +12,37 @@
     <input id="first-number" type="number">
     <input id="second-number" type="number">
     <br>
-    <button id="botonSuma" onclick="operation('+')">+</button>
-    <button id="botonResta" onclick="operation('-')">-</button>
-    <button id="botonMultiplicacion" onclick="operation('*')">*</button>
-    <button id="botonDivision" onclick="operation('/')">/</button>
+    <button id="sum-button" onclick="operation('+')">+</button>
+    <button id="minus-button" onclick="operation('-')">-</button>
+    <button id="product-button" onclick="operation('*')">*</button>
+    <button id="division-button" onclick="operation('/')">/</button>
     <br>
     <p id="operationResult"></p>
 </body>
 <script>
     const operationResult = document.getElementById("operationResult");
     function operation(symbol) {
-    const primerNumero = parseInt(document.getElementById("first-number").value);
-    const segundoNumero = parseInt(document.getElementById("second-number").value);
-
+    const firstNumber = parseInt(document.getElementById("first-number").value);
+    const secondNumber = parseInt(document.getElementById("second-number").value);
+    if(isNaN(firstNumber)|| isNaN(secondNumber)){
+        alert("Insert a valid Number");
+    }
+    else{
         switch(symbol){
           case "+":
-            operationResult.innerHTML = primerNumero + segundoNumero;
+            operationResult.innerHTML = firstNumber + secondNumber;
             break;
           case "-":
-            operationResult.innerHTML = primerNumero - segundoNumero;
+            operationResult.innerHTML = firstNumber - secondNumber;
             break;
           case "*":
-            operationResult.innerHTML = primerNumero * segundoNumero;
+            operationResult.innerHTML = firstNumber * secondNumber;
             break;
           case "/":
-            operationResult.innerHTML = primerNumero / segundoNumero;
+            operationResult.innerHTML = firstNumber / secondNumber;
             break;
         }
+    }
     }
 </script>
 
