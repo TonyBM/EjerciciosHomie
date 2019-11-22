@@ -4,7 +4,7 @@ const things = ["Petroleo", "Carne", "Rosca"];
 
 function wordSearcher(term) {
   wordsFound = []
-  const includesTerm = (currentValue) => currentValue.includes(term);
+  const includesTerm = (currentValue) => currentValue.toLowerCase().includes(term);
 
   wordsFound.push(peopleNames.filter(includesTerm));
   wordsFound.push(animals.filter(includesTerm));
