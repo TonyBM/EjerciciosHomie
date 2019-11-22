@@ -12,19 +12,33 @@
     <input id="first-number" type="number">
     <input id="second-number" type="number">
     <br>
-    <button id="botonSuma">+</button>
-    <button id="botonResta">-</button>
-    <button id="botonMultiplicacion">*</button>
-    <button id="botonDivision">/</button>
+    <button id="botonSuma" onclick="operation('+')">+</button>
+    <button id="botonResta" onclick="operation('-')">-</button>
+    <button id="botonMultiplicacion" onclick="operation('*')">*</button>
+    <button id="botonDivision" onclick="operation('/')">/</button>
     <br>
-    <p id="resultado"></p>
+    <p id="operationResult"></p>
 </body>
 <script>
-    const primerNumero = document.getElementById("first-number");
-    const segundoNumero = document.getElementById("second-number");
-    function operacion() {
-        return () => {return }
-        
+    const operationResult = document.getElementById("operationResult");
+    function operation(symbol) {
+    const primerNumero = parseInt(document.getElementById("first-number").value);
+    const segundoNumero = parseInt(document.getElementById("second-number").value);
+
+        switch(symbol){
+          case "+":
+            operationResult.innerHTML = primerNumero + segundoNumero;
+            break;
+          case "-":
+            operationResult.innerHTML = primerNumero - segundoNumero;
+            break;
+          case "*":
+            operationResult.innerHTML = primerNumero * segundoNumero;
+            break;
+          case "/":
+            operationResult.innerHTML = primerNumero / segundoNumero;
+            break;
+        }
     }
 </script>
 
