@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h2 id="demo">JavaScript.</h2>
+<input placeholder="Introduce tu texto" id="inputText" type="text">
+<button type="button" onclick='changeTitle()'>Click Me!</button>
+
+<script type="text/javascript">
+const titulo = document.getElementById('demo');
+const input = document.getElementById('inputText');
+function changeTitle(){
+  titulo.innerHTML= input.value;
+}
+ 
+</script>
+</body>
+</html>
