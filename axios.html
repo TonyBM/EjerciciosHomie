@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Movies</title>
+</head>
+
+<body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
+  <script type="text/javascript">
+    const type = "jim";
+	const queryURL = "http://www.omdbapi.com/?t=" + type + "&y=&plot=short&apikey=40e9cece";
+	axios.get(queryURL, {
+    responseType: 'json'
+  })
+    .then(function(res) {
+      if(res.status==200) {
+        console.log(res.data);
+      }
+      console.log(res);
+    })
+    .catch(function(err) {
+      console.log('Error de conexión ' + err);
+    })
+    .then(function() {
+    });
+  </script>
+</body>
+</html>
