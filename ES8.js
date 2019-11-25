@@ -3,13 +3,13 @@ function sumByPoints(numbers){
   let total = 0;
 
   numbers.forEach(numero => {
-		let splitNumbers = numero.split('.');
+	let splitNumbers = numero.split('.');
 		numberToSum = parseInt(splitNumbers[counter]);
 
-	  if(!isNaN(numberToSum)){
+	if(!isNaN(numberToSum)){
 	    total += numberToSum;
 	    counter++;
-	  }
+	}
   });
 
   return total;
