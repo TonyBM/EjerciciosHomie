@@ -7,8 +7,8 @@ function sumByPoints(numbers){
     numberToSum = parseInt(splitNumbers[counter]);
 
 	  if(!isNaN(numberToSum)){
-	    total += numberToSum;
-	    counter++;
+      total += numberToSum;
+      counter++;
 	  }
   });
 
