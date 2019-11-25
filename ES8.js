@@ -14,5 +14,4 @@ function sumByPoints(numbers){
 
   return total;
 }
-
 console.log(sumByPoints(["13.09.2017", "13.aa.2018", "44.09.2018", "13.09.7"]));
