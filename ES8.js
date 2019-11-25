@@ -9,7 +9,7 @@ function sumByPoints(numbers){
     if(!isNaN(numberToSum)){
       total += numberToSum;
       counter++;
-	  }
+    }
   });
 
   return total;
