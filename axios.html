@@ -1,42 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="utf-8">
   <title>Movies</title>
 </head>
-
 <body>
-  <table id="table">
-    <th><td>Title</td><td>Year</td><td>Director</td></th>
+  <table id="movies">
+    <th>
+    <td>Title</td>
+    <td>Year</td>
+    <td>Director</td>
+    </th>
   </table>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
   <script type="text/javascript">
     const type = "insidious";
-	const queryURL = "http://www.omdbapi.com/?t=" + type + "&y=&plot=short&apikey=40e9cece";
-	axios.get(queryURL, {
-    responseType: 'json'
-  })
-    .then(function(res) {
-      if(res.status==200) {
-        console.log(res.data);
-        const table = document.getElementById("table");
-        row = table.insertRow(-1);
-        title = row.insertCell(0);
-        year = row.insertCell(1);
-        director = row.insertCell(2);
+    const queryURL = "http://www.omdbapi.com/?t=" + type + "&y=&plot=short&apikey=40e9cece";
+    axios.get(queryURL, {
+      responseType: 'json'
+    })
+      .then(function (movieData) {
+        if (movieData.status == 200) {
+          displayInfo(movieData);
+        }
+      })
+      .catch(function (err) {
+        console.log('Error de conexión ' + err);
+      })
+      .then(function () {
+      });
+      function displayInfo(movieData){
 
-        title.innerHTML = res.data.Title;
-        year.innerHTML = res.data.Year;
-        director.innerHTML = res.data.Director;
+        const table = document.getElementById("movies");
+          row = table.insertRow(-1);
+          title = row.insertCell(0);
+          year = row.insertCell(1);
+          director = row.insertCell(2);
+
+          title.innerHTML = movieData.data.Title;
+          year.innerHTML = movieData.data.Year;
+          director.innerHTML = movieData.data.Director;
       }
-      console.log(res);
-    })
-    .catch(function(err) {
-      console.log('Error de conexión ' + err);
-    })
-    .then(function() {
-    });
   </script>
 </body>
+
 </html>
