@@ -6,10 +6,10 @@ function sumByPoints(numbers){
     let splitNumbers = numero.split('.');
     numberToSum = parseInt(splitNumbers[counter]);
 
-	if(!isNaN(numberToSum)){
-	  total += numberToSum;
-	  counter++;
-	}
+	  if(!isNaN(numberToSum)){
+	    total += numberToSum;
+	    counter++;
+	  }
   });
 
   return total;
