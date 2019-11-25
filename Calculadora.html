@@ -1,49 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
 </head>
-
 <body>
-    <input id="first-number" type="number">
-    <input id="second-number" type="number">
-    <br>
-    <button id="sum-button" onclick="operation('+')">+</button>
-    <button id="minus-button" onclick="operation('-')">-</button>
-    <button id="product-button" onclick="operation('*')">*</button>
-    <button id="division-button" onclick="operation('/')">/</button>
-    <br>
-    <p id="operationResult"></p>
+  <input id="first-number" type="number">
+  <input id="second-number" type="number">
+  <br>
+  <button id="sum-button" onclick="operation('+')">+</button>
+  <button id="minus-button" onclick="operation('-')">-</button>
+  <button id="product-button" onclick="operation('*')">*</button>
+  <button id="division-button" onclick="operation('/')">/</button>
+  <br>
+  <p id="operationResult"></p>
 </body>
 <script>
-    const operationResult = document.getElementById("operationResult");
-    function operation(symbol) {
+  const operationResult = document.getElementById("operationResult");
+  function operation(symbol) {
     const firstNumber = parseInt(document.getElementById("first-number").value);
     const secondNumber = parseInt(document.getElementById("second-number").value);
-    if(isNaN(firstNumber)|| isNaN(secondNumber)){
-        alert("Insert a valid Number");
+    if (isNaN(firstNumber) || isNaN(secondNumber)) {
+      return null
     }
-    else{
-        switch(symbol){
-          case "+":
-            operationResult.innerHTML = firstNumber + secondNumber;
-            break;
-          case "-":
-            operationResult.innerHTML = firstNumber - secondNumber;
-            break;
-          case "*":
-            operationResult.innerHTML = firstNumber * secondNumber;
-            break;
-          case "/":
-            operationResult.innerHTML = firstNumber / secondNumber;
-            break;
-        }
+    switch (symbol) {
+      case "+":
+        operationResult.innerHTML = firstNumber + secondNumber;
+        break;
+      case "-":
+        operationResult.innerHTML = firstNumber - secondNumber;
+        break;
+      case "*":
+        operationResult.innerHTML = firstNumber * secondNumber;
+        break;
+      case "/":
+        operationResult.innerHTML = firstNumber / secondNumber;
+        break;
     }
-    }
-</script>
 
+  }
+</script>
 </html>
