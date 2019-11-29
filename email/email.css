@@ -1,0 +1,55 @@
+*{
+  margin-top :1rem;
+  text-align: center;
+  font-family: Avenir Next Medium;
+}
+.flex-container{
+  display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.center-horizontal{
+  flex-direction: column;
+}
+.imagenCabezera
+{
+  flex : 100%;
+}
+#botonContinuarRegistro{
+  background-color: white;
+  font-size: 16px;
+
+  padding-right: 18vw;
+  padding-left: 15vw;
+  border-color: #8D7AFF;
+  color:#8D7AFF;
+  padding-top: 1vw;
+  padding-bottom: 1vw;
+  border-radius: 0;
+  width: 80%;
+}
+.beneficios
+{
+  display: flex;
+  flex-direction: column;
+}
+#descripcionRegistro{
+  padding-left: 20%;
+  padding-right: 20%;
+}
+#tituloBeneficios{
+  flex:100%;
+}
+#titulo,#tituloBeneficios{
+  color:#666666;
+  font-size: 20px;
+}
+#footer{
+  max-width: 60%;
+}
+.imagenBeneficio{
+  max-width: 100%;
+}
+#descripcionRegistro{
+  color:#666666;
+}
