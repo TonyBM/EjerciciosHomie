@@ -24,7 +24,7 @@ html{
 #enter-container{
 	height: 10%;
 	width: 100%;
-	margin-bottom: 5%;
+	margin-bottom: 10%;
 	justify-content: right;
 }
 #enter{
@@ -42,7 +42,9 @@ html{
   color: white;
 	height: 60%;
   width: 80%;
-  padding-top: 10vh;
+  padding-top: 0vh;
+  font-size: 20px;
+  text-align: center;
 }
 #arrow{
 	padding-left: 7%;
@@ -66,7 +68,7 @@ html{
 }
 #footer{
 	flex:30%;
-	min-height: 30%;
+  min-height: 30%;
 }
 .center-horizontal{
   flex-direction: column;
@@ -108,10 +110,12 @@ html{
 }
 #third-title{
   font-size: 26px;
+  max-width: 60%;
 }
 #footer-text{
   margin-top:5vh;
   font-size: 22px;
+  max-width: 60%;
 }
 #cellphone-image{
   max-width: 100%;
@@ -122,6 +126,9 @@ html{
   width: 100%;
   height: 10vh;
 }
+#contenedor-boton-conoce{
+  min-width: 60%;
+}
 #boton-conoce{
   width: 100%;
   background-color: rgb(90, 132, 238);
@@ -129,21 +136,48 @@ html{
   height: 10vh;
   border-style: none;
 }
+i{
+  color:white;
+}
 #search-container{
-  max-height: 10vh;
+  font-size: 16px;
+  max-height: 8vh;
+  margin-top: 7vh;
+  min-width: 120vw;
+  padding: 0px;
 }
 #search-container div{
   margin: 0;
   padding: 0;
 }
 #search-boton-container{
-  flex:10%
+  flex:15%;
+  width: 5%;
 }
 .option-search-container{
   flex:10%;
+  width: 15%;
 }
 #input-container{
-  flex:60%
+  flex:60%;
+}
+.searcher{
+  min-height: 100%;
+  border-radius: 0px;
+  background-color: white;
+  border-style: none;
+}
+#checkbox-solo-desarrollo{
+  font-size: 10px;
+  padding-top: 10px !important;
+  background-color: white;
+  color : #BBBBBB;
+  text-align: center;
+  width: 10%;
+}
+.select-searcher{
+  background-color: white;
+  min-height: 100%;
 }
 .option-search{
   min-height: 100%;
@@ -168,6 +202,32 @@ html{
 
 }
 
+
+select {
+  background-color: white;
+  border: thin solid grey;
+  border-radius: 4px;
+  display: inline-block;
+  font: inherit;
+  line-height: 1.5em;
+  padding: 0.5em 3.5em 0.5em 1em;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+select.arrows {
+  background-image:    url('image/arrows');
+  background-position: calc(100% - .5rem), 100% 0;
+  background-size:  1.5em 1.5em;
+  background-repeat: no-repeat;
+}
+
+select.arrows:focus {
+  border-color: blue;
+  outline: 0;
+}
 @media (max-width: 600px){
 	#header{
     background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.70), rgba(255, 255, 255, 0.00)),url('images/smallbackground.jpg');
@@ -185,10 +245,25 @@ html{
   }
 
 #search-boton-container{
-  min-width: 25%;
+  min-width: 15%;
   flex:25%;
+  max-width: 15%;
 }
 .option-search{
+  min-width: 100%;
+}
+#search-container{
+
+  max-height: 10vh;
+  margin-top: 7vh;
+}
+#third-title{
+  max-width: 100%;
+}
+#footer-text{
+  max-width: 100%;
+}
+#contenedor-boton-conoce{
   min-width: 100%;
 }
 }
