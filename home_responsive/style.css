@@ -1,6 +1,10 @@
 html{
   font-family: Helvetica, sans-serif;
 }
+body{
+  padding: 0;
+  margin: 0;
+}
 #main-container{
 }
 .flex-container{
@@ -24,7 +28,7 @@ html{
 #enter-container{
 	height: 10%;
 	width: 100%;
-	margin-bottom: 10%;
+	margin-bottom: 5%;
 	justify-content: right;
 }
 #enter{
@@ -38,6 +42,10 @@ html{
   margin-right: 10%;
   
 }
+#title{
+  max-width: 1000px;
+  font-size: 28px;
+}
 #title-container{
   color: white;
 	height: 60%;
@@ -45,6 +53,7 @@ html{
   padding-top: 0vh;
   font-size: 20px;
   text-align: center;
+  padding-bottom: 7%;
 }
 #arrow{
 	padding-left: 7%;
@@ -64,7 +73,8 @@ html{
 }
 #main-content{
 	flex:30%;
-	min-height: 30%;
+  min-height: 30%;
+  padding-bottom: 3rem;
 }
 #footer{
 	flex:30%;
@@ -97,6 +107,7 @@ html{
   font-size: 24px;
   margin:5vh;
   text-align: center;
+  margin-bottom: 3rem;
 }
 #footer{
   min-height: 70vh;
@@ -115,7 +126,7 @@ html{
 #footer-text{
   margin-top:5vh;
   font-size: 22px;
-  max-width: 60%;
+  max-width: 37%;
 }
 #cellphone-image{
   max-width: 100%;
@@ -127,7 +138,9 @@ html{
   height: 10vh;
 }
 #contenedor-boton-conoce{
-  min-width: 60%;
+  min-width: 30%;
+  margin-bottom: 2rem;
+  margin-top: 1rem;
 }
 #boton-conoce{
   width: 100%;
@@ -143,37 +156,41 @@ i{
   font-size: 16px;
   max-height: 8vh;
   margin-top: 7vh;
-  min-width: 120vw;
   padding: 0px;
+  min-width: 100%;
 }
 #search-container div{
   margin: 0;
   padding: 0;
 }
 #search-boton-container{
-  flex:15%;
-  width: 5%;
+  flex:7%;
+  width:10%;
 }
 .option-search-container{
   flex:10%;
   width: 15%;
 }
 #input-container{
-  flex:60%;
+  flex:50%;
+  width: 50%;
+}
+#checkbox-solo-desarrollo{
+  font-size: 10px;
+  flex:10%;
+  width: 10%;
+  padding-top: 10px !important;
+  background-color: white;
+  color : #BBBBBB;
+  text-align: center;
 }
 .searcher{
   min-height: 100%;
   border-radius: 0px;
   background-color: white;
   border-style: none;
-}
-#checkbox-solo-desarrollo{
-  font-size: 10px;
-  padding-top: 10px !important;
-  background-color: white;
-  color : #BBBBBB;
-  text-align: center;
-  width: 10%;
+  background-image: url('images/arrows_select.png');
+
 }
 .select-searcher{
   background-color: white;
@@ -185,6 +202,7 @@ i{
   background-color:  rgb(90, 132, 238);
   border-style: none;
   border-radius: 0;
+
 }
 #search{
   max-height: 10vh;
@@ -193,16 +211,13 @@ i{
 }
 #input-search{
  
-  max-width: 100%;
+  min-width: 100%;
   min-height: 100%;
   margin: 0;
   padding: 0;
   border-style: none;
   border-radius: 0;
-
 }
-
-
 select {
   background-color: white;
   border: thin solid grey;
@@ -210,17 +225,16 @@ select {
   display: inline-block;
   font: inherit;
   line-height: 1.5em;
-  padding: 0.5em 3.5em 0.5em 1em;
+  padding: 0.7em 3.5em 0.5em 1em;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   -webkit-appearance: none;
   -moz-appearance: none;
 }
-select.arrows {
-  background-image:    url('image/arrows');
+select{
   background-position: calc(100% - .5rem), 100% 0;
-  background-size:  1.5em 1.5em;
+  background-size:  .8em .8em;
   background-repeat: no-repeat;
 }
 
@@ -259,12 +273,6 @@ select.arrows:focus {
 }
 #third-title{
   max-width: 100%;
-}
-#footer-text{
-  max-width: 100%;
-}
-#contenedor-boton-conoce{
-  min-width: 100%;
 }
 }
 .red{background-color: red;}
