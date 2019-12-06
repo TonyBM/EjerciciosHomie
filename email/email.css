@@ -1,55 +1,83 @@
+
+@font-face {
+  font-family: Avenir-next;
+  src: url("avenir next sv/AvenirNextLTPro-Regular.otf") format("opentype");
+}
+body{
+font-family: Avenir-next;
+}
 *{
-  margin-top :1rem;
   text-align: center;
-  font-family: Avenir Next Medium;
 }
 .flex-container{
   display: flex;
 	align-items: center;
 	justify-content: center;
 }
+#boton-container{
+  margin-top: 1rem;
+}
 .center-horizontal{
   flex-direction: column;
 }
-.imagenCabezera
+.header-image
 {
   flex : 100%;
 }
-#botonContinuarRegistro{
+#main{
+  margin-top: 0;
+}
+#title{
+  margin-top: .5rem;
+}
+#continue-register-button{
   background-color: white;
-  font-size: 16px;
-
-  padding-right: 18vw;
-  padding-left: 15vw;
+  font-size: 18px;
+  
+  padding-right: 8vw;
+  padding-left: 8vw;
   border-color: #8D7AFF;
   color:#8D7AFF;
-  padding-top: 1vw;
-  padding-bottom: 1vw;
+  padding-top: 1.2vw;
+  padding-bottom: 1.2vw;
+  white-space: nowrap;
   border-radius: 0;
-  width: 80%;
 }
-.beneficios
+.benefits
 {
   display: flex;
   flex-direction: column;
 }
-#descripcionRegistro{
-  padding-left: 20%;
-  padding-right: 20%;
+#register-description{
+  padding-left: 28%;
+  padding-right: 28%;
 }
-#tituloBeneficios{
+#benefits-title{
   flex:100%;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
-#titulo,#tituloBeneficios{
+#title, #benefits-title{
   color:#666666;
   font-size: 20px;
 }
 #footer{
   max-width: 60%;
 }
-.imagenBeneficio{
-  max-width: 100%;
+.benefits-image{
+  max-width: 80%;
 }
-#descripcionRegistro{
+#register-description{
   color:#666666;
+  line-height: 25px;
+  width: 600px;
+}
+a{
+  color: #8D7AFF;
+}
+#benefits-title{
+  font-size: 18px;
+}
+.benefits p{
+  margin-top: 3rem;
 }
