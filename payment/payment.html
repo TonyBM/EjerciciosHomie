@@ -10,49 +10,56 @@
 </head>
 
 <body>
-  <div class="payment-container flex-container center-horizontal center-elements ">
+  <div class="payment-container flex-container center-horizontal  ">
     <div class="container-title ">
       <p>Elige tu forma de pago</p>
     </div>
-    <div class="container-body flex-container center-horizontal center-elements ">
+    <div class="container-body flex-container center-horizontal  ">
       <div class="payment-section option flex-container center-elements ">
-        <div class="option-image"><img src="images/unknown.png" alt=""></div>
+        <div class="option-image"><img src="images/unknown.png" ></div>
         <div class="option-text">
           <p>Tarjeta de credito o débito</p>
         </div>
       </div>
       <div class="payment-section cards flex-container center-elements">
         <div class="contenedor-tarjeta visa" id="visa-button">
-          <img src="images/visa.png" id="visa-image" alt="">
+          <img src="images/visa.png" id="visa-image" >
         </div>
         <div class="contenedor-tarjeta master-card " id="mastercard-button">
-          <img src="images/mastercard.png" id="mastercard-image" alt="">
+          <img src="images/mastercard.png" id="mastercard-image" >
         </div>
         <div class="contenedor-tarjeta amex " id="amex-button">
-          <img src="images/amex.png" id="amex-image" alt="">
+          <img src="images/amex.png" id="amex-image">
         </div>
       </div>
-      <div class="payment-section flex-container form-container ">
+      <div class="payment-section form-container ">
         
           <div class="form-element ">
-            <label for="">Nombre Completo</label><input type="text">
+            <label for="">Nombre Completo</label><input placeholder="Nombre" type="text">
           </div>
-          <div class="form-element two-elements vigencia">
-            <label for="">Vigencia</label><input type="text">
-          </div>
-          <div class="form-element two-elements cvc ">
-            <label for="">CVC</label><input type="text">
+          <div class="form-element flex-container two-elements vigencia">
+            <div class="half-element">
+                <label for="">Vigencia</label><br><input placeholder="mm/aa" type="text">
+            </div>
+            <div class="half-element">
+              <label for="">CVC</label><br><input placeholder="____" type="text">
+            </div>
           </div>
           <div class="form-element">
-            <label for="">Numero de tarjeta</label><input type="text">
+            <label for="">Numero de tarjeta</label><input placeholder="_______________" type="text">
           </div>
           <div class="form-element two-elements codigo-postal ">
-            <label for="">Código Postal</label><input type="text">
+            <label for="">Código Postal</label><input placeholder="____" type="text">
           </div>
           <div class="form-element guardar-tarjeta ">
               <input name="guardar" class="checkbox-guardar" type="checkbox"><label for="guardar" class="checkbox-label">Guardar Tarjeta</label>
           </div>
-          <div class="form-element ">
+          <div class="mastercard-message" id="master-card-message">
+            Tienes código de Master Card? escribelo aquí
+            <input type="text">
+            Utiliza el código HOMIEMC al pagar con tu tarjeta MastrerCard y recibe benficios exclusivos.
+          </div>
+          <div class="form-element button-contianer" id="button-container">
               <button><strong>Pagar</strong></button>
           </div>
       </div>
@@ -62,7 +69,7 @@
       </div>
     </div>
   </div>
-  <script src="payment.js">
+  <script src="js-payment.js">
   </script>
 </body>
 
