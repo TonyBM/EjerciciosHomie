@@ -46,6 +46,12 @@ font-size: 16px;
 .option{
   height: 9%;
 }
+.master-card{
+  margin-top:20px;
+}
+.amex{
+  margin-top:20px;
+}
 .option .option-image{
   width:10%
 }
@@ -72,9 +78,6 @@ border-radius: 4px;
 }
 .contenedor-tarjeta #visa-image{  
   margin-top:40%;
-}
-.master-card{
-  margin: 0 3% 0 3%;
 }
 .form-container{
   background-color: rgb(249, 249, 249);
@@ -123,6 +126,7 @@ input{
   max-width: 80%;
   margin-left: 15px;
   border: 1px solid rgb(236, 236, 236);
+  margin-bottom: 20px;
   
 }
 .guardar-tarjeta .checkbox-guardar{
@@ -145,10 +149,14 @@ input{
   width: 90%;
   border-color: rgb(141, 122, 255);
   background-color:rgb(141, 122, 255) ;
+  margin-left: 10px;
   color:white;
   border-radius: 4px;
   height: 30px;
   box-shadow: none;
+}
+.form-element.codigo-postal input{
+  width: 40%;
 }
 .form-element.button-contianer{
   display: none;
@@ -161,6 +169,12 @@ input{
   display: none;
   text-align: center;
   margin-left: 10px;
+  margin-top: 10px;
+}
+.mastercard-message input{
+  width: 90%;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 #comission-text{
   font-size: 14px;
