@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'reports/info'
+  get 'reports/info', to: 'reports#info'
   get 'welcome/index'
   get :hello_world, to: 'hello_word#index'
   resources :users
