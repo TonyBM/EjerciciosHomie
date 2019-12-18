@@ -1,0 +1,82 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" type="text/css" rel="stylesheet">
+<div class="my-container">
+  <div class="header">
+
+    <div class="backbutton-container"><%=image_tag("backwards.png")%></div>
+    <div class="movile-homie-image"><%=image_tag("logo-mobile.png")%></div>
+    <div class="user-logo"><%=image_tag("icon.png")%></div>
+  </div>
+  <div class="main-container">
+
+    <div class="report-date">
+      <div class="logo-desktop"><%=image_tag("logo-desktop.png") %></div>
+      <div class="title"><p>Reporte de Inquilino</p></div>
+      <div class="content"><p>Fecha Julio 16 del 2019 valido hasta octubre 16 del 2019 calculado con Homie Technology tiene un rango de 0 a 1500</p></div>
+    </div>
+    <div class="score">
+      <div class="graphic-data">
+        <div class="indicator-circle"><%=image_tag("unknown.png")%>
+          <p class="number-score"><strong>1052</strong></p>
+        </div>
+        <div class="bar-container">
+          <div class="down-limit">0</div>
+          <div class="up-limit">1500</div>
+          <div class="bar-image">
+            <%=image_tag("bar.png")%>
+          </div>
+          <div class="value-1">Malo</div>
+          <div class="value-2">Medio</div>
+          <div class="value-3">Bueno</div>
+          <div class="value-4">Excelente</div>
+        </div>
+        <div class="result-interpretation"><strong><p>Este puntaje es bueno</p></strong></div>
+        <div class="proportion"><p>Rango superior al 43% de los inquilinos de México</p></div>
+      </div>
+      <div class="results">
+        <p>Identificacion Otorgada: <strong>Verificada</strong></p>
+        <p>Nivel Socioeconomico: <strong>N/A</strong></p>
+        <p>Listas Negras: <strong>No</strong></p>
+        <p>Prevencion de lavado de dinero: <strong>No disponible</strong></p>
+        <p>Redes sociales vinculadas: <strong>Ninguna</strong></p>
+      </div>
+    </div>
+    <div class="tenant-data">
+      <div class="logo"><%=image_tag("icon.png")%></div>
+      <div class="info">
+        <p class="name"><strong>Esteban Manuel Lopez Ramirez</strong></p>
+        <p class="address">centro, 123, Piso 12, Depa 123, centro Yucatan</p>
+        <p class="budget">$44,000.00</p>
+      </div>
+    </div>
+    <div class="tenant-details">
+      <div class="icon"><%=image_tag("case.png")%></div>
+      <div class="element">/ <strong>Empleo</strong></div>
+      <div class="icon"><%=image_tag("book.png")%> </div>
+      <div class="element">Especialidad-o-diplomado / <strong>UTM</strong></div>
+      <div class="icon"><%=image_tag("coins.png")%> </div>
+      <div class="element">Ingresos verificados <strong>No disponible</strong></div>
+      <div class="icon"><%=image_tag("mail.png")%></div>
+      <div class="element"><strong>dev+victor126inquilino@homie.mx</strong></div>
+      <div class="icon"><%=image_tag("people.png")%> </div>
+      <div class="element">Referencia: <strong>Lorena Ester Manzanero Rodriguez</strong>
+        <br> centro, 123, Centro Yucatán, CP 97000</div>
+      <div class="icon"><%=image_tag("people.png")%> </div>
+      <div class="element">Referencia: <strong>Catalina Esmeralda Estrada Castro</strong>
+        <br> centro, 123, Petrolera, Veracruz, CP 96500</div>
+      <div class="icon"><%=image_tag("people.png")%></div>
+      <div class="element">Referencia: <strong>Luis Manuel Castillo Lopez</strong>
+        <br> centro, 123, Centro Yucatán, CP 97000</div>
+    </div>
+    <div class="homie-message">
+      <div class="message">Nuestra tecnología nos permite rentar tu inmueble al <strong>mejor inquilino,</strong> sin
+        <strong>ningún riesgo</strong> y en <strong>tiempo record</strong>
+      </div>
+      <div class="seal"><%=image_tag("homie-logo.png") %></div>
+    </div>
+
+
+  </div>
+</div>
+<%= button_tag(class: "glyphicon glyphicon-download-alt") do %>
+  Guardar
+<% end%>
