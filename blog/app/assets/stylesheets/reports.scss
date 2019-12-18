@@ -1,0 +1,374 @@
+@mixin grid-container($gap, $columns: auto auto auto) {
+  display: grid;
+  grid-gap: $gap;
+  grid-template-columns: $columns;
+  grid-template-rows: auto auto auto;
+}
+@mixin grid-column-placement($start, $end) {
+  grid-column-start: $start;
+  grid-column-end: $end;
+}
+@mixin grid-row-placement($start, $end) {
+  grid-row-start: $start;
+  grid-row-end: $end;
+}
+$border-color: #E4E1D3;
+$movile-small-letter: 14px;
+$movile-medium-letter: 20px;
+$movile-title:33px;
+$gris: #888888;
+html {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+}
+.header {
+  display: block;
+  width: 100%;
+  height: 50px;
+  padding-top: 5px;
+  border-bottom: solid 3px $border-color;
+  @include grid-container(10px);
+  div {
+    text-align: center;
+    height: 40px;
+  }
+  img {
+    max-height: 100%;
+  }
+  .backbutton-container {
+    @include grid-column-placement(1, 2);
+    text-align: start;
+  }
+  .movile-homie-image {
+    @include grid-column-placement(2, 3);
+  }
+  .user-logo {
+    @include grid-column-placement(3, 4);
+  }
+  @media (min-width: 768px) {
+    display: none;
+    height: 100px;
+    width: 100%;
+  }
+}
+.my-container {
+  width: 100%;
+  @media (min-width: 768px) {
+    width: 768px;
+    height: auto;
+    margin:auto;
+  }
+}
+.main-container {
+  width: 95%;
+  margin-left: 2.5%;
+  padding: 20px 0 0 0;
+  width: 375px;
+  margin: auto;
+  font-size: $movile-small-letter;
+
+  @include grid-container(10px);
+  @media (min-width: 768px) {
+    @include grid-container(10px, auto auto auto auto auto auto);
+    width: 100%;
+  }
+  div {
+    height: auto;
+    border: solid 1px $border-color;
+    overflow: hidden;
+  }
+  .report-date {
+    @include grid-column-placement(1, 4);
+    text-align: center;
+    padding: 10px;
+    line-height: 1.6;
+    .logo-desktop {
+      display: none;
+    }
+    div {
+      border: none;
+    }
+    .title {
+      font-size: 20px;
+      @media (min-width: 768px) {
+        max-height: 60px;
+
+      }
+    }
+    .content {
+      font-weight: 200;
+      color: $gris;
+    }
+    @media (min-width: 768px) {
+      @include grid-container(0px, auto auto auto auto auto auto auto auto auto);
+      @include grid-column-placement(1, 6);
+      @include grid-row-placement(1,2);
+      padding: 15px 50px 15px 0px;
+      text-align: start;
+      .title {
+        font-size: 40px;
+        line-height: 0px;
+
+        @include grid-column-placement(3, 10);
+        @include grid-row-placement(1, 2);
+      }
+      .content {
+
+        @include grid-column-placement(3, 10);
+        @include grid-row-placement(2, 4);
+        max-width: 75%;
+      }
+      .logo-desktop {
+        display: block;
+        text-align: end;
+        padding: 15px 15px 0 0;
+        @include grid-column-placement(1, 3);
+        @include grid-row-placement(1, 4);
+        img {
+          max-width: 65%;
+        }
+      }
+
+    }
+  }
+  .score {
+    @include grid-column-placement(1, 4);
+
+    text-align: center;
+    padding: 30px 0 25px 0;
+    div {
+      border: none;
+    }
+    .graphic-data {
+    }
+    .indicator-circle {
+      img {
+        width: 35%;
+        @media (min-width: 768px) {
+          width: auto;
+        }
+      }
+      p {
+        position: absolute;
+        margin-top: -85px;
+        margin-left: 150px;
+        font-size: 28px;
+        @media (min-width: 768px) {
+          margin-top: -85px;
+          margin-left: 105px;
+          font-size: 28px;
+        }
+      }
+    }
+    img {
+      max-width: 100%;
+    }
+    .bar-container {
+      max-width: 55%;
+      margin: auto;
+      @include grid-container(0px, auto auto auto auto);
+      div {
+        font-size: $movile-small-letter;
+      }
+
+      .down-limit {
+        @include grid-column-placement(1, 3);
+        text-align: start;
+      }
+      .up-limit {
+        @include grid-column-placement(3,5);
+        text-align: end;
+      }
+      .bar-image {
+        @include grid-column-placement(1, 5);
+      }
+      .value-1 {
+        @include grid-column-placement(1, 2);
+      }
+      .value-2 {
+        @include grid-column-placement(2, 3);
+      }
+      .value-3 {
+        @include grid-column-placement(3, 4);
+      }
+      .value-4 {
+        @include grid-column-placement(4, 5);
+      }
+      @media (min-width: 768px) {
+
+        @include grid-row-placement(2,5);
+        width: 80%;
+        max-width: 100%;
+        div {
+          font-size: 10px;
+        }
+
+      }
+    }
+    .proportion {
+      font-size: $movile-small-letter;
+      max-width: 80%;
+      margin: auto;
+      @media (min-width: 768px) {
+        font-size: 9px;
+        max-width: 100%;
+
+      }
+    }
+    .result-interpretation {
+      font-size: $movile-medium-letter;
+      @media (min-width: 768px)  {
+        font-size: 14px;
+        height: 30px;
+
+      }
+    }
+    .results {
+      font-size: $movile-medium-letter;
+      text-align: start;
+      overflow: hidden;
+      background-color: rgb(205, 215, 52);
+      padding: 50px 15px 50px 30px;
+      font-size: 20px;
+      @media (min-width: 768px) {
+        height: 252px;
+        font-size: 12px;
+        padding-right: 0;
+        padding-left: 15px;
+        line-height: 1.5;
+
+      }
+    }
+    @media (min-width: 768px) {
+      @include grid-column-placement(1, 3);
+
+      max-width: 350px;
+      @include grid-row-placement(2, 6);
+      padding-bottom: 0;
+    }
+  }
+  .tenant-data {
+    @include grid-column-placement(1, 4);
+    @include grid-container(0px,auto auto auto auto auto auto auto);
+    max-height: 280px;
+    @media (min-width: 768px) {
+      @include grid-column-placement(2, 4);
+      @include grid-row-placement(2,3);
+      text-align: center;
+      height: auto;
+      max-height: 250px;
+      padding-bottom: 0;
+    }
+    div {
+      border: none;
+    }
+    .logo {
+      text-align: center;
+      @include grid-column-placement(1,3);
+      padding-top: 40px;
+      img {
+        max-width: 75%;
+        @media (min-width: 768px) {
+          max-width: 25%;
+
+        }
+      }
+      @media (min-width: 768px) {
+        padding: 10px;
+        @include grid-column-placement(1, 8);
+      }
+    }
+    .info {
+      @include grid-column-placement(3,8);
+      width: 100%;
+      padding-left: 40px;
+      .name {
+        font-size: $movile-medium-letter;
+      }
+      .info {
+        p {
+
+          font-size: $movile-small-letter;
+        }
+      }
+      @media (min-width: 768px) {
+        @include grid-column-placement(1, 8);
+
+        padding-left: 0;
+
+      }
+    }
+    @media (min-width: 768px) {
+      @include grid-column-placement(3,6)
+
+    }
+  }
+  .tenant-details {
+    @include grid-column-placement(1, 4);
+    @include grid-container(20px,auto auto);
+    padding: 15px 55px 20px 20px;
+    div {
+      border: none;
+    }
+    .icon {
+      @include grid-column-placement(1,2);
+      max-width: 20px;
+    }
+    .element {
+       @include grid-column-placement(2,3);
+      @media (min-width: 768px) {
+        margin-left: -80px;
+      }
+    }
+    img {
+      max-width: 20px;
+    }
+    @media (min-width: 768px) {
+      @include grid-container(5px,auto auto);
+      @include grid-column-placement(3, 6);
+      @include grid-row-placement(3, 6);
+      font-size: 12px;
+      max-height: 310px;
+    }
+  }
+  .homie-message {
+    @include grid-column-placement(1, 4);
+    text-align: center;
+    padding: 30px 15px 15px 30px;
+    line-height: 1.6;
+    div {
+      border: none;
+    }
+    .message {
+      max-width: 80%;
+      margin: auto;
+      @media (min-width:768px) {
+        max-width: 100%;
+        font-size: 20px;
+
+      }
+    }
+    .seal {
+      max-width: 50%;
+      margin: auto;
+      margin-top: 20px;
+      img {
+        max-width: 100%;
+        @media (min-width: 768px) {
+          max-width: 40%;
+
+        }
+      }
+    }
+    @media (min-width: 768px) {
+      @include grid-column-placement(1,6);
+
+    }
+  }
+}
+button {
+  width: 120px;
+  height: 40px;
+  margin-left:5%;
+  font-size: 10px;
+}
