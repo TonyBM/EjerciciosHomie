@@ -4,6 +4,5 @@ FactoryBot.define do
       rents {FactoryBot.create(:rent)}
       price { Faker::Number.number(digits: 10) }
       extra_service { Faker::Number.number(digits: 10) }
-      total_amount { Faker::Number.number(digits: 10) }
     end
   end
