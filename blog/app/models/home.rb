@@ -7,6 +7,7 @@ class Home
   field extra_service, type: Float
   field total_amount, type: Float
   field home_features, type: Hash, default: { garden: false, furnished: false, gym: false }
+  enum :status, [:in_progress, :published, :rented]
   belongs_to :owner
   has_many :rents
   validates :home_features, inclusion: { garden: [true, false], furnished: [true, false], gym:[true, false] }
