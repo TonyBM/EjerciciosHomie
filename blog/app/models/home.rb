@@ -3,8 +3,9 @@ class Home
   belongs_to :owner
   has_many :rents
   validates :home_features, inclusion: { garden: [true, false], furnished: [true, false], gym:[true, false] }
-  field price, type: Integer
-  field extra_service, type: String
+  validates :pice, presence: { message: 'insertar precio' }
+  field price, type: Float
+  field extra_service, type: Float
   field total_amount, type: Float
   field home_features, type: Hash, default: { garden: false, furnished: false, gym: false }
 end
