@@ -1,6 +1,5 @@
 FactoryBot.define do
   factory :user do
-    user {FactoryBot.create(:user)}
     email { FFaker::Internet.email }
     name { FFaker::NameMX.first_name }
     last_name { FFaker::NameMX.last_name }

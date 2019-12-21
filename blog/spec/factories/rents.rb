@@ -1,6 +1,7 @@
 FactoryBot.define do
-    factory :owner do
-        homes {FactoryBot.create(:home)}
-        user {FactoryBot.create(:user)}
-    end
+  factory :rent do
+
+    home {FactoryBot.create(:home)}
+    user {FactoryBot.create(:user)}
+  end
 end

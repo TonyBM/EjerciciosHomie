@@ -1,10 +1,11 @@
 class User
   include Mongoid::Document
-  validates :name, presence: { message: 'no tienes nombre? ' }
-  has_many :rents
   field :email, type: String
   field :name, type: String
   field :last_name, type: String
   field :mobile_phone, type: String
   field :work_place, type: String
+
+  has_many :rents
+  validates :name, presence: { message: 'no tienes nombre? ' }
 end
