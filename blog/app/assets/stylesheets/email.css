@@ -1,0 +1,82 @@
+@font-face {
+	font-family: Avenir-next;
+	src: url("avenir next sv/AvenirNextLTPro-Regular.otf") format("truetype");
+  }
+  body{
+  font-family: Avenir-next;
+  }
+  *{
+	text-align: center;
+  }
+  .flex-container{
+	display: flex;
+	  align-items: center;
+	  justify-content: center;
+  }
+  #boton-container{
+	margin-top: 1rem;
+  }
+  .center-horizontal{
+	flex-direction: column;
+  }
+  .header-image
+  {
+	flex : 100%;
+  }
+  #main{
+	margin-top: 0;
+  }
+  #title{
+	margin-top: .5rem;
+  }
+  #continue-register-button{
+	background-color: white;
+	font-size: 18px;
+	
+	padding-right: 8vw;
+	padding-left: 8vw;
+	border-color: #8D7AFF;
+	color:#8D7AFF;
+	padding-top: 1.2vw;
+	padding-bottom: 1.2vw;
+	white-space: nowrap;
+	border-radius: 0;
+  }
+  .benefits
+  {
+	display: flex;
+	flex-direction: column;
+  }
+  #register-description{
+	padding-left: 28%;
+	padding-right: 28%;
+  }
+  #benefits-title{
+	flex:100%;
+	margin-top: 2rem;
+	margin-bottom: 2rem;
+  }
+  #title, #benefits-title{
+	color:#666666;
+	font-size: 20px;
+  }
+  #footer{
+	max-width: 60%;
+  }
+  .benefits img{
+	max-width: 80%;
+  }
+  #register-description{
+	color:#666666;
+	line-height: 25px;
+	width: 600px;
+  }
+  a{
+	color: #8D7AFF;
+  }
+  #benefits-title{
+	font-size: 18px;
+  }
+  .benefits p{
+	margin-top: 3rem;
+  }
