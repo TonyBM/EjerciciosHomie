@@ -7,49 +7,62 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
-  <%= stylesheet_link_tag 'email' %>
 </head>
+
 <body>
   <div class="container center-horizontal flex-container">
     <div id="header" class=" center-horizontal flex-container">
-      <div class="header-image"><%=image_tag("head.png") %></div>
-      <div class="header-image"><%=image_tag("head2.png") %></div>
+      <div class="header-image"><%= image_tag("head.png") %></div>
+      <div class="header-image"><%= image_tag("head2.png") %></div>
     </div>
     <div id="main" class="center-horizontal flex-container">
       <div id="title" class="red">
         <p>Hola Propietario Apellido,</p>
       </div>
-      <div id="register-description" class="green">
-        <p>Has iniciado un registro para publicar tu propiedad en nuestra plataforma, <br>
-          <a class="text-link" href="https://www.google.com">los espacios y amenidades</a> son algunos extras que ayudan <br>
-          a que tu propiedad se rente más rápido, especifícalos ahora.</p>
+      <div id="register-description-start" class="register-description" class="green">
+        <p>¿Recuerdas el registro que iniciaste para poner en renta tu propiedad con nosotros?
+        Continúa el proceso y disfruta de todo lo que te ofrecemos. En Homie queremos que rentes tu inmueble en el menor tiempo posible, por ello también publicamos tu anuncio en:</p>
+      </div>
+      <div class="imagenes-plataformas">
+        <div class="linea-dos-imagenes">
+          <div class="imagen-plataforma">
+          <%=image_tag("lamudi.png")%>
+        </div>
+          <div class="imagen-plataforma">
+            <%=image_tag("metrosCubicos.png") %>
+          </div>
+        </div>
+        <div class="linea-dos-imagenes">
+          <div class="imagen-plataforma">
+            <%=image_tag("inmuebles24.png")%>
+          </div>
+          <div class="imagen-plataforma">
+            <%=image_tag("cariglist.png") %>
+          </div>
+        </div>
+        <div class="linea-tres-imagenes">
+          <div class="imagen-plataforma">
+            <%=image_tag("goplaceit.png") %>
+          </div>
+          <div class="imagen-plataforma">
+            <%=image_tag("propiedadespuntocom.png") %>
+          </div>
+          <div class="imagen-plataforma">
+            <%=image_tag("mercadoLibre.png") %>
+          </div>
+        </div>
+
+      </div>
+      <div class="register-description" id="register-description-end" class="green">
+        <p>
+          así como en anuncios destacados dentro de Facebook y Google,
+          todo esto sin costo y sin pedirte exclusividad. ¡No dejes pasar la oportunidad!
+        </p>
       </div>
       <div id="boton-container" class="red">
-        <a href="https://www.google.com"><button id="continue-register-button">Continuar Registro</button></a>
-      </div>
-    </div>
-    <div class="flex-container">
-      <div id="benefits-title">
-        <p>Rentar con homie tiene varios beneficios:</p>
-      </div>
-    </div>
-    <div id="footer" class=" red flex-container">
-      <div class="green benefits flex-container">
-        <%=image_tag("investigacion.png") %>
-        <p>Obten al mejor inquilino</p>
-      </div>
-      <div class="red benefits flex-container">
-        <%=image_tag("apartado.png") %>
-        <p>Garantia de pago puntual</p>
-      </div>
-      <div class="green benefits flex-container">
-        <%=image_tag("firma.png") %>
-        <p>Protección Juridica</p>
+        <a href="https://www.google.com"><button id="continue-register-button">Continuar Tu Registro Ahora</button></a>
       </div>
     </div>
   </div>
-
-
 </body>
-
 </html>

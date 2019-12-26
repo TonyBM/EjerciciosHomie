@@ -5,7 +5,13 @@ Rails.application.configure do
   # every request. This slows down response time but is perfect for development
   # since you don't have to restart the web server when you make code changes.
   config.cache_classes = false
+  config.action_controller.asset_host
+  config.action_mailer.delivery_method = :letter_opener
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = true
 
+  config.action_controller.asset_host = 'http://localhost:3000/'
+  config.action_mailer.asset_host = config.action_controller.asset_host
   # Do not eager load code on boot.
   config.eager_load = false
 
