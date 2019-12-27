@@ -1,13 +1,19 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import ImageContainer from './components/ImageContainer';
+import FormContainer from './components/FormContainer';
+import styled from 'styled-components';
+const GalleryContainer = styled.section
+  `
+  
+  `
+;
 
 function App() {
   return (
-    <div className="App">
-      <ImageContainer />
-    </div>
+    <GalleryContainer>
+      <FormContainer />
+    </GalleryContainer>
   );
 }
 
