@@ -2,13 +2,13 @@ import * as actionTypes from '../constants/actionTypes';
 import ArticlesApi from '../api/articlesApi';
 
 export function addArticle(title, content) {
-  return {
-    type: actionTypes.ADD_ARTICLE,
-    title: title,
-    content: content
-  };
+  return function (dispatch) {
+    return ArticlesApi.createArticle(title,content).then(article => {
+        return artile => {dispatch(successShowArticle(article));}
+      })
+      .catch(error => console.log('error', error));
+  }
 }
-
 export function editArticle(id) {
   return {
     type: actionTypes.EDIT_ARTICLE,
@@ -40,7 +40,7 @@ export function removeArticle(id) {
 }
 
 export function allArticles(){
-  return function(dispatch){
+  return  function(dispatch){
     return ArticlesApi.getArticles().then(articles => {
       dispatch(successLoadArticles(articles));
     }).catch(error => {

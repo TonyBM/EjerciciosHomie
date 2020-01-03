@@ -1,40 +1,36 @@
-import React, { Component } from 'react';
+import React, { Component, useEffect } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import {infoArticle} from '../../actions/articles';
+import { infoArticle } from '../../actions/articles';
 
-class ArticleInfo extends Component {
-  constructor() {
-    super();
-    this.handleDelete = this.handleDelete.bind(this);
-  }
+const ArticleInfo = (props) => {
 
-  componentDidMount() {
-    this.props.showArticle(this.props.match.params.id);
-  }
+  useEffect(() => {
+    props.showArticle(props.match.params.id);
+  }, []);
 
-  handleDelete() {
-    fetch(`api/articles/${this.props.match.params.id}`, {method: 'DELETE'})
+  const handleDelete = () => {
+    fetch(`api/articles/${props.match.params.id}`, { method: 'DELETE' })
       .then(() => {
-        this.props.history.push("/articles")
+        props.history.push("/articles")
       })
       .catch(error => console.log('error', error));
   }
 
-  render() {
-    return (
-      <div>
-        <h2>{this.props.article.id}: {this.props.article.title}</h2>
-        <p>{this.props.article.content}</p>
-        <p>
-          <Link to={`/articles/${this.props.article.id}/edit`} className="btn btn-outline-dark">Edit</Link>
-          <button onClick={this.handleDelete} className="btn btn-outline-dark">Delete</button> 
-          <Link to="/articles" className="btn btn-outline-dark">Close</Link>
-        </p>
-        <hr/>
-      </div>
-    )
-  }
+  console.log(props);
+
+  return (
+    <div>
+      <h2>{props.article.id}: {props.article.title}</h2>
+      <p>{props.article.content}</p>
+      <p>
+        <Link to={`/articles/${props.article.id}/edit`} className="btn btn-outline-dark">Edit</Link>
+        <button onClick={handleDelete} className="btn btn-outline-dark">Delete</button>
+        <Link to="/articles" className="btn btn-outline-dark">Close</Link>
+      </p>
+      <hr />
+    </div>
+  );
 }
 
 function mapStateToProps(state) {

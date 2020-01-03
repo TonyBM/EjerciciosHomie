@@ -1,28 +1,29 @@
 import React, { useState, useEffect } from 'react';
-import {connect} from 'react-redux'
+import { connect } from 'react-redux'
 import { Link } from 'react-router-dom';
-import {addArticle, allArticles} from '../../actions/articles';
+import { addArticle, allArticles } from '../../actions/articles';
+
 
 function ArticleList(props) {
 
-  // componentDidMount() {
-  //   this.props.listArticles();
-  // }
+  useEffect(() => {
+    props.listArticles();
+  }, []);
 
   return (
     <div>
       {
-        this.props.articles.map((article) => {
-          return(
+        props.articles.map((article) => {
+          return (
             <div key={article.id}>
               <h2><Link to={`/articles/${article.id}`}>{article.title}</Link></h2>
               {article.content}
-              <hr/>
+              <hr />
             </div>
           );
         })
       }
-      <button onClick={() => this.props.addArticle('Hola', 'Holi')} className="btn btn-outline-primary">Create Article</button>
+      <Link to={`/articles/new`}>Nuevo Articulo</Link>
     </div>
   );
 }

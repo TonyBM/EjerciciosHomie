@@ -1,55 +1,56 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 import Form from './Form';
 
-class ArticleAdd extends Component {
-  constructor() {
-    super();
-    this.state = { title: '', content: '' };
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleCancel = this.handleCancel.bind(this);
-  }
 
-  handleSubmit(event) {
+
+const ArticleAdd = (props) => {
+
+  const [title, useTitle] = useState('');
+  const [content, useContent] = useState('');
+
+  const handleSubmit = (event) => {
     event.preventDefault();
     fetch('api/articles', {
-        method: 'POST',
-        body: JSON.stringify(this.state),
-        headers: {'Content-Type': 'application/json' }
-      })
+      method: 'POST',
+      body: JSON.stringify(article),
+      headers: { 'Content-Type': 'application/json' }
+    })
       .then(response => response.json())
       .then(data => {
-        this.props.history.push(`/articles/${data.id}`);
+        props.history.push(`/articles/${data.id}`);
       })
       .catch(error => console.log('error', error));
   }
 
-  handleChange(event) {
-    this.setState({ [event.target.name]: event.target.value });
+  const handleChange = (event) => {
+    if (event.target.name == "title") {
+      useTitle(event.target.value);
+    } else {
+      useContent(event.target.value);
+    }
   }
 
-  handleCancel() {
-    this.props.history.push("/articles");
+  const handleCancel = () => {
+    props.history.push("/articles");
   }
 
-  render() {
-    const article = {
-      title: this.state.title,
-      content: this.state.content
-    };
-    const settings = {
-      handleSubmit: this.handleSubmit,
-      handleChange: this.handleChange,
-      handleCancel: this.handleCancel,
-      actionLabel: 'Create'
-    };
-    return (
-      <div>
-        <h1>{this.state.title}</h1>
-        <Form article={article} settings={settings}/>
-      </div>
-    );
-  }
+  const article = {
+    title: title,
+    content: content
+  };
+  const settings = {
+    handleSubmit: handleSubmit,
+    handleChange: handleChange,
+    handleCancel: handleCancel,
+    actionLabel: 'Create'
+  };
+
+  return (
+    <div>
+      <h1>{title}</h1>
+      <Form article={article} settings={settings} />
+    </div>
+  );
 }
 
 export default ArticleAdd;

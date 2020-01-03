@@ -23,11 +23,11 @@ function Form(props) {
       <form onSubmit={props.settings.handleSubmit}>
         <div className="form-group">
           <label>Title</label>
-          <input type="text" name="title" value={props.article.title} onChange={props.settings.handleChange} className="form-control" />
+          <input type="text" name="title" placeholder="hola" value={props.article.title} onChange={props.settings.handleChange} className="form-control" />
         </div>
         <div className="form-group">
           <label>Content</label>
-          <textarea name="content" rows="5" value={props.article.content} onChange={props.settings.handleChange} className="form-control" />
+          <textarea name="content" placeholder="Holi" rows="5" value={props.article.content} onChange={props.settings.handleChange} className="form-control" />
         </div>
         <div className="btn-group">
           <button type="submit" className="btn btn-dark">{props.settings.actionLabel}</button>
