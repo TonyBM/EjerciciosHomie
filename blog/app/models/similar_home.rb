@@ -19,6 +19,7 @@ class SimilarHome
           homes.each do |home|
 
             next unless home.location == location && home.total_amount == amount
+            next if home.master_home_id
             next if home_with_values.include? home
 
             home_with_values.push(home)
