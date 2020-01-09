@@ -38,10 +38,19 @@ export function removeArticle(id) {
     id: id
   };
 }
-
-export function allArticles(){
+export function pagedArticles(page = 1){
   return  function(dispatch){
-    return ArticlesApi.getArticles().then(articles => {
+    return ArticlesApi.getPagedArticles(page).then(articles => {
+      dispatch(successLoadArticles(articles));
+    }).catch(error => {
+      console.log('error', error)
+    });
+  }
+}
+
+export function allArticles(page){
+  return  function(dispatch){
+    return ArticlesApi.getArticles(page).then(articles => {
       dispatch(successLoadArticles(articles));
     }).catch(error => {
       console.log('error', error)

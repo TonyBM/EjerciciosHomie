@@ -1,7 +1,12 @@
 import axios from 'axios';
 class ArticlesApi {
-  static getArticles() {
-    return axios.get('api/articles')
+  static getArticles(page = 1) {
+    return axios.get('api/articles',{
+      params:{
+        page: page,
+        per_page: 3
+      }
+    })
       .then(response => {
         return response.data;
       })

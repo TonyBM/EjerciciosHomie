@@ -2,15 +2,19 @@ class Api::ArticlesController < ApplicationController
   skip_before_action :verify_authenticity_token
 
   def index
-    @articles = Article.all
-    render json: @articles
+    pages = params[:page]
+    per_page = params[:per_page]
+    @articles = Article.paginate(page: pages,per_page: per_page)
+    @number_articles = Article.all.count
+    @answer = {page: @articles, number: @number_articles}
+    #render json: @articles
+    render json: @answer
   end
 
   def show
     @article = Article.find(params[:id])
     render json: @article
   end
-
   def create
     @article = Article.new(article_params)
     if @article.save
