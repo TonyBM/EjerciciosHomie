@@ -1,10 +1,10 @@
 import axios from 'axios';
 class ArticlesApi {
-  static getArticles(page = 1) {
-    return axios.get('api/articles',{
-      params:{
+  static getArticles(page = 1, per_page) {
+    return axios.get('api/articles', {
+      params: {
         page: page,
-        per_page: 3
+        per_page: per_page
       }
     })
       .then(response => {
@@ -15,7 +15,7 @@ class ArticlesApi {
       });
   }
 
-  static getArticle(id){
+  static getArticle(id) {
     return axios.get(`api/articles/${id}`)
       .then(response => {
         return response.data;
@@ -24,15 +24,15 @@ class ArticlesApi {
         return error;
       });
   }
-  static createArticle(title,content){
+  static createArticle(title, content) {
 
     return axios.post('api/articles', {
-        title: title,
-        content: content
-      }
+      title: title,
+      content: content
+    }
     )
-    .then(response => {return response.data})
-    .catch(error => console.log('error', error));
+      .then(response => { return response.data })
+      .catch(error => console.log('error', error));
   }
 }
 

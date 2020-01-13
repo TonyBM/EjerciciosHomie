@@ -5,10 +5,8 @@ class Api::ArticlesController < ApplicationController
     pages = params[:page]
     per_page = params[:per_page]
     @articles = Article.paginate(page: pages,per_page: per_page)
-    @number_articles = Article.all.count
-    @answer = {page: @articles, number: @number_articles}
-    #render json: @articles
-    render json: @answer
+    @number_articles = Article.count
+    render json: {page: @articles, number: @number_articles}
   end
 
   def show

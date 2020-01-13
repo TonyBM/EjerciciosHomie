@@ -9,7 +9,7 @@ import {
 const articlesState = {
   articles: [],
   article: {},
-  number: 0
+  pageNumber: 0
 };
 
 function articlesReducer(state = articlesState, action) {
@@ -42,14 +42,7 @@ function articlesReducer(state = articlesState, action) {
         ...state,
         articles: action.articles.page,
         number: action.articles.number
-      };/*
-      return {
-        ...state,
-        result: {
-          articles: action.articles.page,
-          number: action.articles.number
-        }
-      };*/
+      };
     default:
       return state;
   }

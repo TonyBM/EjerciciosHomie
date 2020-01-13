@@ -48,9 +48,9 @@ export function pagedArticles(page = 1){
   }
 }
 
-export function allArticles(page){
+export function allArticles(page, per_page){
   return  function(dispatch){
-    return ArticlesApi.getArticles(page).then(articles => {
+    return ArticlesApi.getArticles(page, per_page).then(articles => {
       dispatch(successLoadArticles(articles));
     }).catch(error => {
       console.log('error', error)

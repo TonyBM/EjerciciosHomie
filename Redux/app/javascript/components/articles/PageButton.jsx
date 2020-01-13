@@ -24,7 +24,6 @@ function PageButton(props) {
       color: white;
     }
   `;
-console.log(props);
   return (
     <Button onClick={props.clickAction(props.page)}>
       {props.page}

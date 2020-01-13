@@ -6,30 +6,32 @@ import PageButton from './PageButton.jsx';
 
 
 let actualPage;
+let per_page = 3;
 function ArticleList(props) {
 
-  const [page, usePage] = useState(1);
-  actualPage = page;
+  const [pageNumber, usePage] = useState(1);
+  actualPage = pageNumber;
   useEffect(() => {
     props.listArticles();
   }, []);
 
-  const clickAction = (newPage) =>{
+  const changePage = (newPage) => {
     return () => {
       usePage(newPage);
-      console.log(`Cambiaste a la página ${newPage}`);
       actualPage = newPage;
       props.listArticles(newPage);
     }
   }
-  const generatedButtons = [];
-  let pagesNumber =parseInt(props.number/3);
-  for (let i=1; i<=pagesNumber;i++){
-    generatedButtons.push(<PageButton page={i} key={i} selected= {actualPage == i} clickAction = {clickAction}/>);
+  const article_pages = [];
+  let pagesNumber = parseInt(props.PageNumber / per_page);
+
+  for (let page = 1; page <= pagesNumber; page++) {
+    article_pages.push(<PageButton page={page} key={page} selected={actualPage == page} clickAction={changePage} />);
   }
+
   return (
     <div>
-      <h1>{page}</h1>
+      <h1>{pageNumber}</h1>
       {
         props.articles.map((article) => {
           return (
@@ -41,7 +43,7 @@ function ArticleList(props) {
           );
         })
       }
-      {generatedButtons}
+      {article_pages}
       <Link to={`/articles/new`}>Nuevo Articulo</Link>
     </div>
   );
@@ -50,14 +52,14 @@ function ArticleList(props) {
 function mapStateToProps(state) {
   return {
     articles: state.articlesReducer.articles,
-    number: state.articlesReducer.number
+    PageNumber: state.articlesReducer.number
   }
 }
 
 function mapDispatchToProps(dispatch) {
   return {
     addArticle: (title, content) => dispatch(addArticle(title, content)),
-    listArticles: () => dispatch(allArticles(actualPage))
+    listArticles: () => dispatch(allArticles(actualPage, per_page))
   }
 }
 
