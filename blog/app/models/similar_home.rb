@@ -1,5 +1,4 @@
 class SimilarHome
-  include Mongoid::Document
 
   def self.display_similar_homes
     id_owner = Owner.pluck(:id)
@@ -32,8 +31,7 @@ class SimilarHome
 
   def self.print_homes(homes)
     homes.each do |home|
-        puts "owner: #{home.owner_id} id:#{home.id} total_amount:#{home.total_amount} location: #{home.location}"
+        puts "#{home.owner_id} #{home.id} #{home.total_amount} #{home.location}"
     end
-    puts " "
   end
 end
