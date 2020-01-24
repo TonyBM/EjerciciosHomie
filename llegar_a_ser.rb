@@ -8,6 +8,14 @@ def steps_to_transform(aspiring_word, objective_word)
   result
 end
 def tranform_included(word, word_template)
+
+  formed_word = ""
+  
+  word_template.each_char do |letter|
+    add(formed_word, letter)
+    break if (formed_word + word).eql?(word_template)
+  end
+  formed_word.concat(word)
   
 end
 def transform_long(long_word, short_word)
@@ -37,7 +45,8 @@ def transform(word, word_template,index)
   word[index] = word_template[index]
 end
 
-#puts "Ejemplo primera palabra mas larga"
-#puts steps_to_transform("holamundo", "holemurd")
+puts "Ejemplo primera palabra mas larga"
+puts steps_to_transform("dado", "candado")
+puts "------------"
 puts "Ejemplo primera palabra mas corta"
-puts steps_to_transform("holemurd", "holamundo")
+puts steps_to_transform("Daily", "Mayly")
